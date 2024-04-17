@@ -15,7 +15,7 @@ export class SpecialityService {
   }
 
   findAll() {
-    return this.specModel.find().populate('workers')
+    return this.specModel.find().populate('workers');
   }
 
   findOne(id: number) {
@@ -23,10 +23,10 @@ export class SpecialityService {
   }
 
   update(id: number, updateSpecialityDto: UpdateSpecialityDto) {
-    return `This action updates a #${id} speciality`;
+    return this.specModel.findByIdAndUpdate(id, updateSpecialityDto);
   }
 
   remove(id: number) {
-    return `This action removes a #${id} speciality`;
+    return this.specModel.deleteOne({ _id: id });
   }
 }

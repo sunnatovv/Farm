@@ -2,9 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { CreateMeatProductionDto } from './dto/create-meat_production.dto';
 import { UpdateMeatProductionDto } from './dto/update-meat_production.dto';
 import { InjectModel } from '@nestjs/mongoose';
-// import { MeatProduction } from './schemas/meat_production.schema'';
 import { Model } from 'mongoose';
-import { MeatProduction } from './schemas/meat_production.schema\'';
+import { MeatProduction } from "./schemas/meat_production.schema'";
 
 @Injectable()
 export class MeatProductionService {
@@ -21,7 +20,7 @@ export class MeatProductionService {
   }
 
   findOne(id: string) {
-    return this.meatProdModel.findOne({ id });
+    return this.meatProdModel.findOne({ _id: id });
   }
 
   update(id: string, updateMeatProductionDto: UpdateMeatProductionDto) {
